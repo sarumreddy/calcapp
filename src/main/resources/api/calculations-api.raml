@@ -1,0 +1,90 @@
+#%RAML 1.0
+title: calculations-api
+version: v1
+protocols:
+  - HTTP
+  - HTTPS
+description: "creating calculation api for basic operations"
+uses:
+  lib: /Library/library.raml
+
+/add:
+  get:
+    is:
+      - lib.error
+    queryParameters:
+        num1:
+          type: integer
+          required: true
+        num2:
+          type: integer
+          required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "result" : "The sum of num1 and num2 is 20"
+              }
+/sub:
+  post:
+    is:
+      - lib.error
+    queryParameters:
+        num1:
+          type: integer
+          required: true
+        num2:
+          type: integer
+          required: true 
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "result" : "The substraction of num1 and num2 is 6"
+              }
+/mul:
+  patch:
+    is:
+      - lib.error
+    queryParameters:
+        num1:
+          type: integer
+          required: true
+        num2:
+          type: integer
+          required: true
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "result" : "The multiplication of num1 and num2 is 60"
+              }
+/div:
+  delete:
+    is:
+      - lib.error
+    queryParameters:
+        num1:
+          type: integer
+          required: true
+        num2:
+          type: integer
+          required: true  
+    responses:
+      200:
+        body:
+          application/json:
+            example:
+              {
+                "result" : "The division of num1 and num2 is 5"
+              }                                          
+      
+
+
+          
